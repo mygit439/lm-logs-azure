@@ -25,11 +25,11 @@
     }
   },
   "variables": {
-    "logsFunctionAppName": "[concat('func','-','lm-logs','-',parameters('LM_Company_name'), '-', replace(parameters('azure_region'),'-','dev'))]",
-    "eventhubNamespace": "[concat('eh','-','lm-logs','-',parameters('LM_Company_name'), '-', replace(parameters('azure_region'),'-','dev'))]",
-    "storage": "stwhlmlogseusdev",
+    "logsFunctionAppName": "[concat('func','-','lm-logs','-',parameters('LM_Company_name'),'-', replace(parameters('azure_region'),'',''),'-','prd')]",
+    "eventhubNamespace": "[concat('eh','-','lm-logs','-',parameters('LM_Company_name'), '-', replace(parameters('azure_region'),'',''),'-','prd')]",
+    "storage": "stwhlmlogseusprd",
     "lmAppStorageAccounts": "[if(greater(length(variables('storage')) , 24), substring(variables('storage'), sub(length(variables('storage')) , 24), 24) , variables('storage'))]",
-    "eventhubLogsName": "log-hub-dev",
+    "eventhubLogsName": "log-hub-prd",
     "ConsumergroupsLogsName": "LMConsumerGroup",
     "functionServerfarms": "[concat(variables('eventhubNamespace'),'-service-plan')]",
     "listener": "listener",
