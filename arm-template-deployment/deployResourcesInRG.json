@@ -27,7 +27,7 @@
   "variables": {
     "logsFunctionAppName": "[concat('func','-','lm-logs','-',parameters('LM_Company_name'), '-', replace(parameters('azure_region'),'-','dev'))]",
     "eventhubNamespace": "[concat('eh','-','lm-logs','-',parameters('LM_Company_name'), '-', replace(parameters('azure_region'),'-','dev'))]",
-    "storage": "[toLower('stwhlmlogseusdev')]",
+    "storage": "stwhlmlogseusdev",
     "lmAppStorageAccounts": "[if(greater(length(variables('storage')) , 24), substring(variables('storage'), sub(length(variables('storage')) , 24), 24) , variables('storage'))]",
     "eventhubLogsName": "log-hub-dev",
     "ConsumergroupsLogsName": "LMConsumerGroup",
