@@ -25,8 +25,8 @@
     }
   },
   "variables": {
-    "logsFunctionAppName": "[concat('func','-','lm-logs','-',parameters('LM_Company_name'),'-',replace(parameters('azure_region')),'-','prd')]",
-    "eventhubNamespace": "[concat('eh','-','lm-logs','-',parameters('LM_Company_name'), '-', replace(parameters('azure_region'),'',''),'-','prd')]",
+    "logsFunctionAppName": "[concat('func','-','lm-logs','-',parameters('LM_Company_name'),'-',replace(parameters('azure_region'),' ',''),'-','prd')]",
+    "eventhubNamespace": "[concat('eh','-','lm-logs','-',parameters('LM_Company_name'), '-', replace(parameters('azure_region'),' ',''),'-','prd')]",
     "storage": "stwhlmlogseusprd",
     "lmAppStorageAccounts": "[if(greater(length(variables('storage')) , 24), substring(variables('storage'), sub(length(variables('storage')) , 24), 24) , variables('storage'))]",
     "eventhubLogsName": "log-hub-prd",
