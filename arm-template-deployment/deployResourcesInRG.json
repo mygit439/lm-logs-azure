@@ -31,7 +31,7 @@
     "lmAppStorageAccounts": "[if(greater(length(variables('storage')) , 24), substring(variables('storage'), sub(length(variables('storage')) , 24), 24) , variables('storage'))]",
     "eventhubLogsName": "log-hub-prd",
     "ConsumergroupsLogsName": "LMConsumerGroup",
-    "functionServerfarms": "[concat(variables('eventhubNamespace'),'-service-plan')]",
+    "functionServerfarms": "[concat('asp','-',variables('eventhubNamespace'),'-service-plan')]",
     "listener": "listener",
     "sender": "sender"
   },
